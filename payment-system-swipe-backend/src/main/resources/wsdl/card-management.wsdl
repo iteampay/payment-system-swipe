@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:tns="http://za.co.itempay.paymentsystemswipe.backend.ws"
+                  xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  targetNamespace="http://za.co.itempay.paymentsystemswipe.backend.ws"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://za.co.itempay.paymentsystemswipe.backend.ws">
+      <s:element name="handshake">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Merchant_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="handshakeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="handshakeResult" type="tns:HandShakeRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HandShakeRsp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="cardActivation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cardActivationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardActivationResult" type="tns:cardAct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="cardAct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="pinBlockTranslated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AedoAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contractNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="installAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contractAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="installments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="frequency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="employer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="adjRule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tracking" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="customScreen" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="line1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="globalTimeout" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AedoAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AedoAuthResult" type="tns:AuthRsp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AuthRsp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContractAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tracking" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdjRule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Frequency" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="cardActPrinter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="slipText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inPAN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cardActPrinterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardActPrinterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="swipeCardPrompt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="swipeCardPromptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="swipeCardPromptResult" type="tns:cardSwipe" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="cardSwipe">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="handshakeSoapIn">
+    <wsdl:part name="parameters" element="tns:handshake" />
+  </wsdl:message>
+  <wsdl:message name="handshakeSoapOut">
+    <wsdl:part name="parameters" element="tns:handshakeResponse" />
+  </wsdl:message>
+  <wsdl:message name="cardActivationSoapIn">
+    <wsdl:part name="parameters" element="tns:cardActivation" />
+  </wsdl:message>
+  <wsdl:message name="cardActivationSoapOut">
+    <wsdl:part name="parameters" element="tns:cardActivationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AedoAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:AedoAuth" />
+  </wsdl:message>
+  <wsdl:message name="AedoAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:AedoAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="cardActPrinterSoapIn">
+    <wsdl:part name="parameters" element="tns:cardActPrinter" />
+  </wsdl:message>
+  <wsdl:message name="cardActPrinterSoapOut">
+    <wsdl:part name="parameters" element="tns:cardActPrinterResponse" />
+  </wsdl:message>
+  <wsdl:message name="swipeCardPromptSoapIn">
+    <wsdl:part name="parameters" element="tns:swipeCardPrompt" />
+  </wsdl:message>
+  <wsdl:message name="swipeCardPromptSoapOut">
+    <wsdl:part name="parameters" element="tns:swipeCardPromptResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CardManagementServiceSoap">
+    <wsdl:operation name="handshake">
+      <wsdl:input message="tns:handshakeSoapIn" />
+      <wsdl:output message="tns:handshakeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cardActivation">
+      <wsdl:input message="tns:cardActivationSoapIn" />
+      <wsdl:output message="tns:cardActivationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AedoAuth">
+      <wsdl:input message="tns:AedoAuthSoapIn" />
+      <wsdl:output message="tns:AedoAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cardActPrinter">
+      <wsdl:input message="tns:cardActPrinterSoapIn" />
+      <wsdl:output message="tns:cardActPrinterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swipeCardPrompt">
+      <wsdl:input message="tns:swipeCardPromptSoapIn" />
+      <wsdl:output message="tns:swipeCardPromptSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CardManagementServiceSoap" type="tns:CardManagementServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="handshake">
+      <soap:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/handshake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardActivation">
+      <soap:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/cardActivation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AedoAuth">
+      <soap:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/AedoAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardActPrinter">
+      <soap:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/cardActPrinter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swipeCardPrompt">
+      <soap:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/swipeCardPrompt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CardManagementServiceSoap12" type="tns:CardManagementServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="handshake">
+      <soap12:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/handshake" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardActivation">
+      <soap12:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/cardActivation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AedoAuth">
+      <soap12:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/AedoAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardActPrinter">
+      <soap12:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/cardActPrinter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swipeCardPrompt">
+      <soap12:operation soapAction="http://za.co.itempay.paymentsystemswipe.backend.ws/swipeCardPrompt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CardManagementService">
+    <wsdl:port name="CardManagementServiceSoap" binding="tns:CardManagementServiceSoap">
+      <soap:address location="http://196.14.89.40/tccABIL/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CardManagementServiceSoap12" binding="tns:CardManagementServiceSoap12">
+      <soap12:address location="http://196.14.89.40/tccABIL/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

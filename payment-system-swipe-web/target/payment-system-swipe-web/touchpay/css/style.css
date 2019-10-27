@@ -1,0 +1,444 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 13px Georgia, "Times New Roman", Times, serif;
+	background: url(images/header.jpg) top center no-repeat #870010;
+	text-align: center;
+	color: #FFF;
+}
+
+/**** GENERAL STYLES ****/
+
+a {
+	color: #F47D1F;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FFCFB3;
+}
+
+p {
+	line-height: 1.4em;
+	text-align: justify;
+	padding: 10px 0 0 0;
+}
+
+#mainContent ul,
+#mainContent ol {
+	margin-left: 40px;
+	line-height: 1.8em;
+	padding: 10px 0 0 0;
+}
+
+#mainContent ul {
+	list-style: url(images/bullet_o.gif);
+}
+
+blockquote {
+	border-left: 4px solid #B21;
+	color: #FFCFB3;
+	margin: 10px 40px 0 40px;
+	line-height: 1.8em;
+	padding: 0 10px 10px 10px;
+}
+
+blockquote:first-line {
+	font-size: 20px;
+	font-style: italic;
+	line-height: 1.4em;
+}
+
+code {
+	border-bottom: 1px dotted #B21;
+	color: #FFCFB3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	font-variant: small-caps;
+	line-height: 1.5em;
+}
+
+h1 {
+	font-size: 26px;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	font-size: 12px;
+}
+
+
+/**** GENERAL LAYOUT ****/
+
+#container {
+	width: 868px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#header {
+	height: 520px;
+	padding: 0 10px 0 20px;
+}
+
+#mainContent {
+	background: url(images/footer.jpg) bottom center no-repeat;
+}
+
+/**** HEADER STYLES ****/
+
+#header h1 {
+	float: left;
+	font-size: 72px;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1.2em;
+	padding-top: 10px;
+}
+
+#header h1 a {
+	color: #FFF;
+}
+
+#header h1 a:hover {
+	color: #FFCFB3;
+}
+
+#header h2 {
+	float: left;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: italic;
+	font-variant: normal;
+	line-height: 1.2em;
+	padding: 35px 0 0 10px;
+}
+
+/**** MAIN MENU LAYOUT and STYLES ****/
+
+#menu {
+position: absolute;
+top: 0px;
+left: 80%;
+	color: #FFCFB3;
+	float: right;
+	font-size: 30px;
+	line-height: 1.5em;
+	list-style: none;
+	margin-left: -35px;
+}
+
+#menu a {
+	color: #FFF;
+}
+
+#menu a:hover {
+	background: #FFCFB3;
+	color: #870010;
+}
+
+#menu a,
+#menu span {
+	padding: 0 5px;
+}
+
+/**** BLOG LAYOUT and STYLES ****/
+
+.blog {
+	padding-bottom: 40px;
+}
+
+.blog h2.blogTitle {
+	font-size: 28px;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 18px;
+	position: relative;
+	z-index: 1;
+}
+
+.blog h3.meta {
+	background: url(images/blog_meta.jpg) no-repeat;
+	color: #FFCFB3;
+	font-size: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 10px 0 15px;
+	position: relative;
+	z-index: 0;
+}
+
+* html .blog h3.meta {
+	padding-top: 10px;
+}
+
+.blog h2.blogTitle a {
+	color: #FFF;
+}
+
+.blog h2.blogTitle a:hover {
+	color: #FFCFB3;
+}
+
+.blog h3.meta a {
+	color: #FFCFB3;
+}
+
+.blog h3.meta a:hover {
+	color: #FFF;
+}
+
+img.bullet {
+	padding: 0 4px;
+}
+
+/**** ROUNDED CORNER BOX STYLES ****/
+
+.c1 {
+	background: url(images/c1.gif) top left no-repeat #EC691F;
+	margin: 0 0 40px 0;
+}
+
+.c2 {
+	background: url(images/c2.gif) top right no-repeat;
+}
+
+.c3 {
+	background: url(images/c3.gif) bottom left no-repeat;
+}
+
+.c4 {
+	background: url(images/c4.gif) bottom right no-repeat;
+}
+
+#mainContent .c4 p,
+#mainContent .c4 ul {
+	padding: 0 20px;
+	line-height: 36px;
+	margin-left: 0;
+}
+
+/**** ROUNDED CORNER BOTTOM BOX STYLES ****/
+
+.c4 li {
+	display: inline;
+	background: url(images/bullet_w.gif) center right no-repeat;
+}
+
+.c4 li a {
+	color: #FFCFB3;
+	margin-right: 11px;
+	white-space: nowrap;
+}
+
+.c4 li a:hover {
+	color: #FFF;
+}
+
+.boxDesc {
+	font-size: 28px;
+	font-weight: normal;
+	font-variant: normal;
+}
+
+/**** ROUNDED CORNER BOX - INPUT STYLES ****/
+
+li.formList .c1,
+li.formList .c2,
+li.formList .c3,
+li.formList .c4 {
+	width: 125px;
+}
+
+#postComment .c1,
+#postComment .c2,
+#postComment .c3,
+#postComment .c4 {
+	height: 40px;
+	line-height: 40px;
+	width: 300px;
+}
+
+.c4 input.searchBox,
+#postComment input,
+.postCommentTA textarea {
+	background: transparent;
+	border: none;
+	color: #870010;
+	font: 12px Georgia, "Times New Roman", Times, serif;
+	position: relative;
+	left: 4px;
+	width: 80px;
+}
+
+#mainContent .c1 {
+	margin-bottom: 15px;
+}
+
+#postComment input {
+	float: left;
+	position: relative;
+	top: 12px;
+	width: 200px;
+}
+
+#postComment .postCommentTA .c1,
+#postComment .postCommentTA .c2,
+#postComment .postCommentTA .c3,
+#postComment .postCommentTA .c4 {
+	height: auto;
+	width: 500px;
+}
+
+#mainContent #postComment .postCommentTA .c1 {
+	margin-bottom: 30px;
+}
+
+.postCommentTA textarea {
+	margin: 10px;
+	overflow: auto;
+	width: 470px;
+}
+
+#postComment label {
+	color: #FFCFB3;
+	float: right;
+	padding-right: 10px;
+}
+
+#mainMenu li.formList {
+	line-height: .6em;
+}
+
+/**** BUTTON STYLES ****/
+
+.goButton {
+	background: url(images/button.gif) center center no-repeat;
+	border: none;
+	color: #FFCFB3;
+	height: 28px;
+	width: 38px;
+}
+
+.goButton span {
+	position: relative;
+	top: -1px;
+}
+
+.postButtonCluster {
+	position: relative;
+	top: -20px;
+}
+
+.postButtonCluster button {
+	background: none;
+	border: none;
+	color: #FFCFB3;
+	font: 16px Georgia, "Times New Roman", Times, serif;
+	margin-right: 20px;
+}
+
+/**** COMMENT LIST STYLES ****/
+
+#commentList {
+	list-style-position: outside;
+	position: relative;
+	left: -40px;
+	margin-right: -40px;
+	width: 868px;
+}
+
+#commentList li {
+	background: url(images/blog_meta.jpg) no-repeat;
+	color: #FFCFB3;
+	font-size: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	padding: 0 10px 0 15px;
+}
+
+.commentMeta {
+	clear: both;
+	height: 36px;
+}
+
+.cml { 
+	float: left;
+}
+
+.cmr { 
+	float: right;
+	font-size: 10px;
+}
+
+.commentContent {
+	color: #FFF;
+	position: relative;
+	top: -20px;
+}
+
+/**** FOOTER STYLES ****/
+
+#footer p {
+	color: #FFCFB3;
+	font-size: 11px;
+	padding: 10px 0;
+	text-align: center;
+}
+
+/**** IMAGE FLOATING, IMAGE CENTERING ****/
+
+.floatImgR,
+.floatImgL,
+.imageCenter {
+	border: 1px solid #B21;
+	padding: 2px;
+}
+
+.floatImgR {
+	float: right;
+	margin: 10px 0 5px 10px;
+}
+
+.floatImgL {
+	float: left;
+	margin: 10px 10px 5px 0;
+}
+
+.imageCenter {
+	display: block;
+	margin: 10px auto;
+}
+
+/**** CLEARING ****/
+
+br.clear {
+	clear: both;
+}
